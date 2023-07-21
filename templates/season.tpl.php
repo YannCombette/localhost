@@ -1,41 +1,29 @@
 
-<?php 
+<a class="navbar-brand" href="index.php">My Work/</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+</div>
+</nav>
 
-include '../classes/Seasons.php';
+<div class="container-fluid text-center p-4">
+    <h1>My Work</h1>
+</div>
+<div class="container-fluid text-center pb-4">
+    <h3>Saisons</h3>
+</div>
 
-$directory = '../../'; 
-$folders = array_diff(scandir($directory), array('..', '.')); 
-$seasonsList = []; 
-// var_dump($seasonsList);
-
-foreach ($folders as $folder) {
-    if (preg_match('/^S\d+/', $folder)) {
-        $seasonObject = new Seasons($folder); // Create a Seasons object with the folder name as the season
-        $seasonsList[] = $seasonObject; // Add the Seasons object to the list
-    }
-}
-var_dump($seasonsList);
-
-// Now, $seasonsList contains a list of Seasons objects with their 'season' property set to the folder names.
-// You can access each 'season' value like this:
-foreach ($seasonsList as $seasonObject) {
-    echo $seasonObject->getSeason() . '<br>';
-}
-
-
-?>
-
-
-
-
-<!-- 
-<h1>season : <?= $article->getTitle() ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12">
+<h1>season : <?= $season->getSeason() ?></h1>
 
 <div class="card mb-4">
-    <div class="card-header"><?= $article->getSeason() ?></div>
-    <div class="card-body"><?= $article->getContent() ?></div>
+    <div class="card-header "><?= $season->getSeason() ?></div>
+    <div class="card-body"></div>
      <div></div>
 </div>
 
 
- -->
+
+</div>

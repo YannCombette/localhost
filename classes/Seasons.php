@@ -12,7 +12,9 @@ class Seasons
 
     public function __construct($season = '', $days = '', $author = '', $date = '', $category = '')
     {
-        $this->season = $season;
+        $this->season = ($season !== '') ? $season : [1]; // Set $season to the provided value, or [1] if no value is provided.
+
+       
         $this->days = $days;
         $this->author = $author;
         $this->date = $date;
