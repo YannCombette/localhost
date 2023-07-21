@@ -1,7 +1,7 @@
 <?php 
 
 // Inclusion des fichiers nécessaires
-
+include './classes/Days.php';
 include './classes/Seasons.php';
 include './data.php';
 
@@ -24,11 +24,20 @@ if ($page == 'season'){
     }
     $season = $seasonsList[$seasonId];
 
-} else if ($page == 'home'){
-    $templateName= 'home';
-    $seasons_list = $seasonsList;
+} else if ($page == 'day'){
+    $templateDay = 'day';
+    if (!empty($_GET['id'])){
+        $dayId = trim($_GET['id']);
+    } else {
+        $templateDay = 'home';
+    }
+    $season = $daysList[$dayId];
 
-}
+}else if ($page == 'home'){
+    $templateName= 'home';
+    
+
+};
 
 require __DIR__ . '/templates/header.tpl.php';
 

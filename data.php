@@ -14,3 +14,17 @@ foreach ($folders as $folder) {
         $seasonsList[] = $currentSeason;
     }
 }
+
+$directory = '..';
+$dayfolders = array_diff(scandir($directory), array('..', '.'));
+
+$daysList = [];
+// var_dump($daysList);
+$currentDay = new Days([1]);
+$daysList[] = $currentDay;
+foreach ($dayfolders as $dayFolder) {
+    if (preg_match('/^day\d+/', $dayFolder)) {
+        $currentDay = new Days($dayFolder);
+        $daysList[] = $currentDay;
+    }
+}

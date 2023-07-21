@@ -5,18 +5,13 @@
 class Seasons
 {
     private $season;
-    private $days;
     private $date;
-    private $author;
     private $category;
 
-    public function __construct($season = '', $days = '', $author = '', $date = '', $category = '')
+    public function __construct($season = '', $date = '', $category = '')
     {
         $this->season = ($season !== '') ? $season : [1]; // Set $season to the provided value, or [1] if no value is provided.
 
-       
-        $this->days = $days;
-        $this->author = $author;
         $this->date = $date;
         $this->category = $category;
     }
@@ -45,47 +40,7 @@ class Seasons
 
         return $this;
     }
-
-    /**
-     * Get the value of days
-     */ 
-    public function getSays()
-    {
-        return $this->days;
-    }
-
-    /**
-     * Set the value of days
-     *
-     * @return  self
-     */ 
-    public function setDays($days)
-    {
-        $this->days = $days;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of author
-     */ 
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * Set the value of author
-     *
-     * @return  self
-     */ 
-    public function setAuthor($author)
-    {
-        $this->author = $author;
-
-        return $this;
-    }
-
+    
     /**
      * Get the value of category
      */ 
