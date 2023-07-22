@@ -35,7 +35,8 @@
             //     }
             // }
             // var_dump($seasonsList);
-
+            // var_dump($folders);
+            
             foreach ($seasonsList as $currentId => $currentSeason) {
                 if ($currentId >= 1) {
             ?>

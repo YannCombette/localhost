@@ -1,8 +1,10 @@
 <?php 
 
 // Inclusion des fichiers nécessaires
-include './classes/Days.php';
+
 include './classes/Seasons.php';
+include './classes/Days.php';
+include './classes/Exos.php';
 include './data.php';
 
 // Récupération des données nécessaires la page (si besoin)
@@ -25,13 +27,23 @@ if ($page == 'season'){
     $season = $seasonsList[$seasonId];
 
 } else if ($page == 'day'){
-    $templateDay = 'day';
+    $templateName = 'day';
     if (!empty($_GET['id'])){
         $dayId = trim($_GET['id']);
     } else {
-        $templateDay = 'home';
+        $templateName = 'home';
     }
-    $season = $daysList[$dayId];
+    var_dump($dayList);
+    $day = $dayList[$dayId];
+
+}else if ($page == 'exo'){
+    $templateName = 'exo';
+    if (!empty($_GET['id'])){
+        $exoId = trim($_GET['id']);
+    } else {
+        $templateName = 'home';
+    }
+    $exo = $exosList[$exoId];
 
 }else if ($page == 'home'){
     $templateName= 'home';
