@@ -1,4 +1,3 @@
-
 <?= var_dump($day) ?>
 
 <a class="navbar-brand" href="index.php">My Work/<?= $day->getDay() ?></a>
@@ -26,8 +25,8 @@ $exoList[] = $currentExo;
 
 foreach ($exofolders as $exofolder) {
     // echo $exofolder;
-        $currentExo = new Exos($exofolder);
-        $exoList[] = $currentExo;
+    $currentExo = new Exos($exofolder);
+    $exoList[] = $currentExo;
 }
 
 // var_dump($season->getSeason());

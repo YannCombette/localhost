@@ -23,7 +23,7 @@ class Exos
 
     /**
      * Get the value of day
-     */ 
+     */
     public function getExo()
     {
         return $this->exo;
@@ -33,17 +33,17 @@ class Exos
      * Set the value of day
      *
      * @return  self
-     */ 
+     */
     public function setExo($exo)
     {
         $this->exo = $exo;
 
         return $this;
     }
-    
+
     /**
      * Get the value of language
-     */ 
+     */
     public function getLanguage()
     {
         return $this->language;
@@ -53,7 +53,7 @@ class Exos
      * Set the value of language
      *
      * @return  self
-     */ 
+     */
     public function setLanguage($language)
     {
         $this->language = $language;

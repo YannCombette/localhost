@@ -23,7 +23,7 @@ class Days
 
     /**
      * Get the value of day
-     */ 
+     */
     public function getDay()
     {
         return $this->day;
@@ -33,17 +33,17 @@ class Days
      * Set the value of day
      *
      * @return  self
-     */ 
+     */
     public function setDay($day)
     {
         $this->day = $day;
 
         return $this;
     }
-    
+
     /**
      * Get the value of language
-     */ 
+     */
     public function getLanguage()
     {
         return $this->language;
@@ -53,7 +53,7 @@ class Days
      * Set the value of language
      *
      * @return  self
-     */ 
+     */
     public function setLanguage($language)
     {
         $this->language = $language;

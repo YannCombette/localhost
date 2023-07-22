@@ -20,3 +20,39 @@
     <!-- https://getbootstrap.com/docs/5.0/components/navbar/ -->
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
+            <!-- <a class="navbar-brand" href="index.php">My Work/</a> -->
+            <?php if ($pageToDisplay == 'season') { ?>
+
+                <a class="navbar-brand" href="index.php">My Work/<?= $seasonToDisplay->getSeason() ?></a>
+
+            <?php } else { ?>
+
+                <a class="navbar-brand" href="index.php">My Work/</a>
+
+            <?php } ?>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <!-- _____________________________________________________________ -->
+
+
+    <?php if ($pageToDisplay == 'season') { ?>
+        <div class="container-fluid text-center p-4">
+            <h1>Season <?= $seasonToDisplay->getSeason() ?></h1>
+        </div>
+        <div class="container-fluid text-center pb-4">
+            <h3>Days</h3>
+        </div>
+
+    <?php } else { ?>
+
+        <div class="container-fluid text-center p-4">
+            <h1>My Work</h1>
+        </div>
+        <div class="container-fluid text-center pb-4">
+            <h3>Saisons</h3>
+        </div>
+    <?php } ?>
