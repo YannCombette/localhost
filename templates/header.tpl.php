@@ -16,17 +16,29 @@
 </head>
 
 <body>
-    <!-- On utilise le composant navbar de la doc Bootstrap -->
-    <!-- https://getbootstrap.com/docs/5.0/components/navbar/ -->
+    <?php include './data.php'; ?>
+
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="index.php">My Work/</a> -->
-            <?php if ($pageToDisplay == 'season') { 
-                if (isset($_GET['id'])) {
-                    $pageId = $_GET['id'];
-                } ?>
 
+            <?php if ($pageToDisplay == 'season') {
+
+                if (isset($_GET['seasonid'])) {
+                    $pageId = $_GET['seasonid'];
+                }?>
                 <a class="navbar-brand" href="index.php">My Work/<?= $pageId ?> </a>
+
+            <?php }
+            if ($pageToDisplay == 'day') {
+                if (isset($_GET['seasonid'])) {
+                    $pageId = $_GET['seasonid'];
+                }
+                if (isset($_GET['dayid'])) {
+                    $exoId = $_GET['dayid'];
+                }
+            ?>
+
+                <a class="navbar-brand" href="index.php">My Work/<?= $pageId ?>/<?= $exoId ?> </a>
 
             <?php } else { ?>
 
@@ -39,18 +51,26 @@
             </button>
         </div>
     </nav>
-    <!-- _____________________________________________________________ -->
-
 
     <?php if ($pageToDisplay == 'season') { ?>
         <div class="container-fluid text-center p-4">
-            <h1>Season <?= $pageId ?></h1>
+            <h1>Season <?= $pageId ?></< /h1>
         </div>
         <div class="container-fluid text-center pb-4">
             <h3>Days</h3>
         </div>
 
-    <?php } else { ?>
+    <?php
+    } elseif ($pageToDisplay == 'day') { ?>
+        <div class="container-fluid text-center p-4">
+            <h1>exercises <?= $exoId ?></< /h1>
+        </div>
+        <div class="container-fluid text-center pb-4">
+            <h3>Days</h3>
+        </div>
+
+    <?php
+    } else { ?>
 
         <div class="container-fluid text-center p-4">
             <h1>My Work</h1>
@@ -59,3 +79,7 @@
             <h3>Saisons</h3>
         </div>
     <?php } ?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">

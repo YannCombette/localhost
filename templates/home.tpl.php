@@ -1,30 +1,11 @@
-<!-- to display this page the there are info in 'data.php', 'index.php', Seasons.php -->
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-12">
-            <?php
-           foreach ($seasonFolders as $seasonFolder) {
-            $folderName = basename($seasonFolder);
-                if (preg_match('/^S\d+$/', $folderName)) {    ?>
-                    <div class="card mb-4">
-                    <div class="card-header"><a href="index.php?page=season&id=<?= $folderName ?>"><?= $folderName ?></a></div>                        
-                    <div class="card-body">Client </div>
-                        <div></div>
-                    </div>
-            <?php
-                }
-            }
-            ?>
-            <nav aria-label="Pagination">
-
-                <ul class="pagination d-flex justify-content-between">
-                    <li class="page-item ">
-                        <a class="page-link" href="#">Précédent</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Suivant</a>
-                    </li>
-                </ul>
-            </nav>
+<?php
+foreach ($seasonFolders as $seasonFolder) {
+    $folderName = basename($seasonFolder);
+    if (preg_match('/^S\d+$/', $folderName)) {    ?>
+        <div class="card mb-4">
+            <div class="card-header"><a href="index.php?page=season&seasonid=<?= $folderName ?>"><?= $folderName ?></a></div>
+            <div class="card-body">Client </div>
+            <div></div>
         </div>
+    <?php }
+} ?>
