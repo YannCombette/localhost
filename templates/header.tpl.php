@@ -16,7 +16,12 @@
 </head>
 
 <body>
-    <?php include './data.php'; ?>
+
+    <?php 
+    //! --------- this is the data needed --------- 
+    include './data.php';
+    // include './localhost/data.php'; 
+     ?>
 
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
