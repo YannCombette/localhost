@@ -21,9 +21,12 @@
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
             <!-- <a class="navbar-brand" href="index.php">My Work/</a> -->
-            <?php if ($pageToDisplay == 'season') { ?>
+            <?php if ($pageToDisplay == 'season') { 
+                if (isset($_GET['id'])) {
+                    $pageId = $_GET['id'];
+                } ?>
 
-                <a class="navbar-brand" href="index.php">My Work/<?= $seasonToDisplay->getSeason() ?></a>
+                <a class="navbar-brand" href="index.php">My Work/<?= $pageId ?> </a>
 
             <?php } else { ?>
 
@@ -41,7 +44,7 @@
 
     <?php if ($pageToDisplay == 'season') { ?>
         <div class="container-fluid text-center p-4">
-            <h1>Season <?= $seasonToDisplay->getSeason() ?></h1>
+            <h1>Season <?= $pageId ?></h1>
         </div>
         <div class="container-fluid text-center pb-4">
             <h3>Days</h3>

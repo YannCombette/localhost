@@ -4,12 +4,12 @@
     <div class="row">
         <div class="col-lg-8 col-md-12">
             <?php
-            foreach ($seasonsList as $currentId => $currentSeason) {
-                if ($currentId >= 1) {
-            ?>
+           foreach ($seasonFolders as $seasonFolder) {
+            $folderName = basename($seasonFolder);
+                if (preg_match('/^S\d+$/', $folderName)) {    ?>
                     <div class="card mb-4">
-                        <div class="card-header"><a href="index.php?page=season&id=<?= $currentId ?>"><?= $currentSeason->getSeason() ?></a></div>
-                        <div class="card-body">Client </div>
+                    <div class="card-header"><a href="index.php?page=season&id=<?= $folderName ?>"><?= $folderName ?></a></div>                        
+                    <div class="card-body">Client </div>
                         <div></div>
                     </div>
             <?php

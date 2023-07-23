@@ -4,19 +4,21 @@
 //get the list of seasons available in ../
 
 $directory = '..';
-$folders = array_diff(scandir($directory), array('..', '.'));
+// $folders = array_diff(scandir($directory), array('..', '.'));
 
-## create season list to add all the season folders
-
-$seasonsList = [];
-// var_dump($seasonsList);
-$currentSeason = new Seasons([1]);
-$seasonsList[] = $currentSeason;
-// var_dump($seasonsList);
-
-foreach ($folders as $folder) {
-    if (preg_match('/^S\d+/', $folder)) {
-        $currentSeason = new Seasons($folder);
-        $seasonsList[] = $currentSeason;
-    }
+function getSubdirectories($path) {
+    $subdirectories = array_filter(glob($path . '/*'), 'is_dir');
+    return $subdirectories;
 }
+
+$seasonFolders = getSubdirectories($directory);
+if (isset($_GET['id'])) {
+     // var_dump($seasonFolders);
+
+     $sFolder = $_GET['id']; // Get the "S" folder from the URL parameter
+     // Display days in the selected "S" folder
+     $daysPath = "../$sFolder/";
+     $dayFolders = getSubdirectories($daysPath);
+ 
+     // var_dump($dayFolders);
+} 
