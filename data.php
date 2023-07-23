@@ -2,7 +2,7 @@
 
 
 //get the list of seasons available in ../
-$directory = '..';
+
 
 function getSubdirectories($path)
 {
@@ -10,6 +10,8 @@ function getSubdirectories($path)
     return $subdirectories;
 }
 
+
+$directory = '..';
 $seasonFolders = getSubdirectories($directory);
 
 if (isset($_GET['seasonid'])) {
@@ -18,7 +20,7 @@ if (isset($_GET['seasonid'])) {
 
     $daysPath = "../$sFolder/";
     $dayFolders = getSubdirectories($daysPath);
-    
+
     if (isset($_GET['dayid'])) {
 
         $dFolder = $_GET['dayid']; 

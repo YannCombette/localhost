@@ -11,15 +11,21 @@
 </nav>
 </div>
 
-<div class="col-lg-4 col-md-12">
+<div class="col-lg-4 col-md-12 d-none d-md-block" >
     <form class="form">
         <div class="input-group mb-4">
             <label for="search" class="visually-hidden">Rechercher</label>
             <input type="text" class="form-control" id="search">
-            <button type="submit" class="btn btn-primary">Rechercher</button>
+            <button type="submit" class="btn btn-outline-primary">Rechercher</button>
         </div>
     </form>
-    <div class="card mb-4">
+
+    <!-- <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
+
+    <div class="card mb-4 d-none d-md-block">
         <div class="card-header">Catégories</div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="#">HTML</a></li>
@@ -28,7 +34,7 @@
             <li class="list-group-item"><a href="#">JS</a></li>
         </ul>
     </div>
-    <div class="card mb-4">
+    <div class="card mb-4 d-none d-md-block">
         <div class="card-header">Auteurs</div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><a href="#">Yann</a></li>
