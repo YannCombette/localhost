@@ -1,56 +1,56 @@
 <?php
 
 // ===========================================================
-// Inclusion des fichiers nécessaires
+// neceseary folders inclutions
 // ===========================================================
-    //! --------- this is the data needed --------- 
-    include './data.php';
-    // include './localhost/data.php'; 
 
 // Librairies
 require __DIR__ . '/inc/lib/kint.phar';
+// connection MySQL
+require __DIR__ . '/inc/db.php';
+// functions
+require __DIR__ . '/inc/functions.inc.php';
+// database management
+include __DIR__ . '/inc/data_form_db.php';
 
+// ===========================================================
+// page display management
+// ===========================================================
 
-// Classes
-require __DIR__ . '/inc/classes/Days.php';
-require __DIR__ . '/inc/classes/Exos.php';
-require __DIR__ . '/inc/classes/Seasons.php';
-
-
+// set the page to display by default
 $pageToDisplay = 'home';
 
+// set the page to display 
 if (isset($_GET['page']) && $_GET['page'] !== '') {
     $pageToDisplay = $_GET['page'];
 }
 
-// Page d'Accueil
-
+// home page display
 if ($pageToDisplay === 'home') {
-
     $pageToDisplay = 'home';
+
+// season page dispay  
 } elseif ($pageToDisplay === 'season') {
-
-    // Page Season
     $pageToDisplay = $_GET['page'];
 
+// day page display
 } elseif ($pageToDisplay == 'day') {
-
-    // Page Day
     $pageToDisplay = $_GET['page'];
 
+// error page or home page display
 } else {
-    // Si l'id n'est pas fourni, on affiche la page d'accueil
-    // plutôt que d'avoir un message d'erreur
     $pageToDisplay = 'home';
 }
 
-//! --------- this is the page display ---------
+// ===========================================================
+// display Localhoste/
+// ===========================================================
 
+// header to display by default for all pages
 require __DIR__ . '/inc/templates/header.tpl.php';
-// require __DIR__ . '/localhost/templates/header.tpl.php';
 
+// page to displayed determined by 'pageToDisplay'
 require __DIR__ . '/inc/templates' . '/' . $pageToDisplay . '.tpl.php';
-// require __DIR__ . '/localhost/templates' . '/' . $pageToDisplay . '.tpl.php';
 
+// footer to display by default for all pages
 require __DIR__ . '/inc/templates/footer.tpl.php';
-// require __DIR__ . '/localhost/templates/footer.tpl.php';

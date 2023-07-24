@@ -15,9 +15,14 @@ $directory = '..';
 // $directory = '.';
 $seasonFolders = getSubdirectories($directory);
 
+//  d($seasonFolders);
+
+
 if (isset($_GET['seasonid'])) {
 
     $sFolder = $_GET['seasonid']; 
+
+    d($sFolder);
 
     $daysPath = "../$sFolder/";
     // $daysPath = "./$sFolder/";

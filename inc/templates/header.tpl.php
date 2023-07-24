@@ -17,108 +17,90 @@
 
 <body>
 
-    <?php 
+    <?php
 
-     ?>
+    ?>
 
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
         <div class="container-fluid">
-
-            <?php if ($pageToDisplay == 'day') {
-                if (isset($_GET['seasonid'])) {
-                    $pageId = $_GET['seasonid'];
-                }
-                if (isset($_GET['dayid'])) {
-                    $exoId = $_GET['dayid'];
-                } ?>
+            <!-- if we are on the day page: add nav bad return urls -->
+            <?php if ($pageToDisplay == 'day') { ?>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="navbar-brand" href="index.php">My Work/</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand" href="index.php?page=season&seasonid=<?= $pageId ?>"><?= $pageId ?>/</a>
+                        <a class="navbar-brand" href="index.php?page=season&season_id=<?= $season_id ?>"><?= $season_id ?>/</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand" href="index.php?page=day&seasonid=<?= $pageId ?>&dayid=<?= $exoId ?>"><?= $exoId ?> </a>
+                        <a class="navbar-brand" href="index.php?page=day&season_id=<?= $season_id ?>&day_id=<?= $day_id ?>"><?= $day_id ?> </a>
                     </li>
                 </ul>
-            <?php } elseif ($pageToDisplay == 'season') {
-                if (isset($_GET['seasonid'])) {
-                    $pageId = $_GET['seasonid'];
-                } ?>
+                <!-- if we are on season page: add nav bad return urls -->
+            <?php } elseif ($pageToDisplay == 'season') { ?>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="navbar-brand" href="index.php">My Work/</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand" href="index.php?page=season&seasonid=<?= $pageId ?>"><?= $pageId ?>/</a>
+                        <a class="navbar-brand" href="index.php?page=season&seasonid=<?= $season_id ?>"><?= $season_id ?>/</a>
                     </li>
                 </ul>
+                <!-- else: add a home button url only  -->
             <?php } else { ?>
 
                 <a class="navbar-brand" href="index.php">My Work/</a>
 
             <?php } ?>
 
-
-
-
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Catégories
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">HTML</a></li>
-              <li><a class="dropdown-item" href="#">CSS</a></li>
-              <li><a class="dropdown-item" href="#">PHP</a></li>
-              <li><a class="dropdown-item" href="#">JS</a></li>
-            </ul>
-          </li>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Auteurs
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Yann</a></li>
-              <li><a class="dropdown-item" href="#">Franck Boullais</a></li>
-              <li><a class="dropdown-item" href="#">Michaël Rolland</a></li>
-              <li><a class="dropdown-item" href="#">Julien Maignan</a></li>
-              <li><a class="dropdown-item" href="#">Henry Michineau</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Catégories
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">HTML</a></li>
+                                <li><a class="dropdown-item" href="#">CSS</a></li>
+                                <li><a class="dropdown-item" href="#">PHP</a></li>
+                                <li><a class="dropdown-item" href="#">JS</a></li>
+                            </ul>
+                        </li>
 
-
-
-
-
-
-
-
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Auteurs
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Yann</a></li>
+                                <li><a class="dropdown-item" href="#">Franck Boullais</a></li>
+                                <li><a class="dropdown-item" href="#">Michaël Rolland</a></li>
+                                <li><a class="dropdown-item" href="#">Julien Maignan</a></li>
+                                <li><a class="dropdown-item" href="#">Henry Michineau</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </nav>
 
     <?php if ($pageToDisplay == 'season') { ?>
         <div class="container-fluid text-center p-4">
-            <h1>Season <?= $pageId ?></< /h1>
+            <h1>Season <?= $season_id ?></< /h1>
         </div>
         <div class="container-fluid text-center pb-4">
             <h3>Days</h3>
@@ -127,10 +109,10 @@
     <?php
     } elseif ($pageToDisplay == 'day') { ?>
         <div class="container-fluid text-center p-4">
-            <h1>exercises <?= $exoId ?></< /h1>
+            <h1><?= $day_id ?></< /h1>
         </div>
         <div class="container-fluid text-center pb-4">
-            <h3>Days</h3>
+            <h3>exercises</h3>
         </div>
 
     <?php
