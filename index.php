@@ -1,4 +1,7 @@
 <?php
+    //! --------- this is the data needed --------- 
+    include './data.php';
+    // include './localhost/data.php'; 
 
 $pageToDisplay = 'home';
 
