@@ -1,7 +1,21 @@
 <?php
+
+// ===========================================================
+// Inclusion des fichiers nécessaires
+// ===========================================================
     //! --------- this is the data needed --------- 
     include './data.php';
     // include './localhost/data.php'; 
+
+// Librairies
+require __DIR__ . '/inc/lib/kint.phar';
+
+
+// Classes
+require __DIR__ . '/inc/classes/Days.php';
+require __DIR__ . '/inc/classes/Exos.php';
+require __DIR__ . '/inc/classes/Seasons.php';
+
 
 $pageToDisplay = 'home';
 
