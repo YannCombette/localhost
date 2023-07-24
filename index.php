@@ -32,11 +32,11 @@ if ($pageToDisplay === 'home') {
 
 //! --------- this is the page display ---------
 
-require __DIR__ . '/templates/header.tpl.php';
+require __DIR__ . '/inc/templates/header.tpl.php';
 // require __DIR__ . '/localhost/templates/header.tpl.php';
 
-require __DIR__ . '/templates' . '/' . $pageToDisplay . '.tpl.php';
+require __DIR__ . '/inc/templates' . '/' . $pageToDisplay . '.tpl.php';
 // require __DIR__ . '/localhost/templates' . '/' . $pageToDisplay . '.tpl.php';
 
-require __DIR__ . '/templates/footer.tpl.php';
+require __DIR__ . '/inc/templates/footer.tpl.php';
 // require __DIR__ . '/localhost/templates/footer.tpl.php';
