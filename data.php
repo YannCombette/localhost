@@ -11,16 +11,16 @@ function getSubdirectories($path)
 }
 
 
-$directory = '..';
-// $directory = '.';
+// $directory = '..';
+$directory = '.';
 $seasonFolders = getSubdirectories($directory);
 
 if (isset($_GET['seasonid'])) {
 
     $sFolder = $_GET['seasonid']; 
 
-    $daysPath = "../$sFolder/";
-    // $daysPath = "./$sFolder/";
+    // $daysPath = "../$sFolder/";
+    $daysPath = "./$sFolder/";
     $dayFolders = getSubdirectories($daysPath);
 
     if (isset($_GET['dayid'])) {

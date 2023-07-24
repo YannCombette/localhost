@@ -19,8 +19,8 @@
 
     <?php 
     //! --------- this is the data needed --------- 
-    include './data.php';
-    // include './localhost/data.php'; 
+    // include './data.php';
+    include './localhost/data.php'; 
      ?>
 
     <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light">
