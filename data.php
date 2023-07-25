@@ -22,13 +22,14 @@ if (isset($_GET['seasonid'])) {
     // $daysPath = "../$sFolder/";
     $daysPath = "./$sFolder/";
     $dayFolders = getSubdirectories($daysPath);
+    
+}
+if (isset($_GET['dayid'])) {
 
-    if (isset($_GET['dayid'])) {
+    $dFolder = $_GET['dayid']; 
 
-        $dFolder = $_GET['dayid']; 
+    // $exosPath = "../$sFolder/$dFolder";
+    $exosPath = "./$sFolder/$dFolder";
+    $exosFolders = getSubdirectories($exosPath);
 
-        $exosPath = "../$sFolder/$dFolder";
-        // $exosPath = "./$sFolder/$dFolder";
-        $exosFolders = getSubdirectories($exosPath);
-    }
 }
