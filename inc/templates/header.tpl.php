@@ -33,7 +33,7 @@
                         <a class="navbar-brand" href="index.php?page=season&season_id=<?= $season_id ?>"><?= $season_id ?>/</a>
                     </li>
                     <li class="nav-item">
-                        <a class="navbar-brand" href="index.php?page=day&season_id=<?= $season_id ?>&day_id=<?= $day_id ?>"><?= $day_id ?> </a>
+                        <a class="navbar-brand" href="index.php?page=day&season_id=<?= $currentSeasonFolder ?>&day_id=<?= $day_id ?>"><?= $day_id ?> </a>
                     </li>
                 </ul>
                 <!-- if we are on season page: add nav bad return urls -->
